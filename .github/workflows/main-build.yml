@@ -11,10 +11,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
 
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: curl -I https://www.google.com
 
       - name: Run a multi-line script
         run: |
@@ -23,6 +23,7 @@ jobs:
     
   build:
     runs-on: ubuntu-latest
+    dependencies: test
 
     steps:
       - uses: actions/checkout@v4
